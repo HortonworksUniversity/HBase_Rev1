@@ -1,0 +1,3 @@
+Hello world
+This is HBase speaking
+Hadoop Hbase and HDFS all work together

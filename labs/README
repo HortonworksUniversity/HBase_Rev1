@@ -1,1 +1,0 @@
-Put lab files here in whatever directory structure you prefer. This folder will be copied to /root/hbase/labs, and that folder will be mounted onto all cluster nodes.

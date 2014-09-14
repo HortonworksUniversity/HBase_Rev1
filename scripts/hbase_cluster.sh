@@ -16,7 +16,7 @@ echo "ResourceManager running on $IP_resourcemanager"
 
 #Start the Hive/Oozie Server
 echo "Starting a Hive/Oozie server..."
-CID_hive=$(docker run -v /root/hbase/labs:/root/labs:rw -d --privileged --link namenode:namenode -e namenode_ip=$IP_namenode -e NODE_TYPE=hiveserver --dns 8.8.8.8 -p 50075 -p 50010 -p 50020 -p 8010 -p 45454 -p 11000:11000 -p 2181 -p 50111:50111 -p 9083 -p 10000 -p 9999:9999 -p 9933:9933 -p 22  --name hiveserver -h hiveserver -i -t hwxu/hdp_hbase_node)
+CID_hive=$(docker run -v /root/hbase/labs:/root/labs:rw -d --privileged --link namenode:namenode -e namenode_ip=$IP_namenode -e NODE_TYPE=hive --dns 8.8.8.8 -p 50075 -p 50010 -p 50020 -p 8010 -p 45454 -p 11000:11000 -p 2181 -p 50111:50111 -p 9083 -p 10000 -p 9999:9999 -p 9933:9933 -p 22  --name hiveserver -h hiveserver -i -t hwxu/hdp_hive_hbase_node)
 IP_hive=$(docker inspect --format "{{ .NetworkSettings.IPAddress }}" hiveserver)
 echo "Hive/Oozie running on $IP_hive"
 
