@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /root/dockerfiles/start_scripts/build.sh $@ && (echo "Parent build.sh failed"; exit 1)
+. /root/dockerfiles/start_scripts/build.sh $@ || (echo "Parent build.sh failed"; exit 1)
 
 apt-get update
 apt-get install -y curl
