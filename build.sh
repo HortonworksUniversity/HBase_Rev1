@@ -27,6 +27,13 @@ echo -e "\n*** Build of hwxu/hdp_hive_hbase_node complete! ***\n"
 cp /root/$REPO_DIR/conf/hbase-site.xml /etc/hbase/conf/hbase-site.xml
 echo "alias mysql='mysql -h hiveserver'" >> /etc/profile
 
+#Fix bug in /etc/hosts (JIRA TRNG-715)
+cat /etc/hosts | grep ubuntu | grep 127
+if [[ $? > 0 ]];
+then
+  echo "127.0.0.1       localhost     ubuntu" >> /etc/hosts
+fi
+
 remove_untagged_images.sh
 
 echo -e "\n*** The lab environment has successfully been built for this classroom VM ***\n"
