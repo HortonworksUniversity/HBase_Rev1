@@ -2,6 +2,7 @@
 
 . /root/dockerfiles/start_scripts/build.sh $@ && (echo "Parent build.sh failed"; exit 1)
 
+apt-get update
 apt-get install -y curl
 apt-get install -y hbase sqoop libmysql-java
 
