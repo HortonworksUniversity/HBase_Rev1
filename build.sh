@@ -5,6 +5,7 @@
 apt-get update
 apt-get install -y curl
 apt-get install -y hbase sqoop libmysql-java
+apt-get install -y mysql-client
 
 # Build hwxu/hdp_zookeeper_node
 echo -e "\n*** Building hwux/hdp_zookeeper_node ***\n"
